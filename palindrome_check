@@ -1,0 +1,58 @@
+word = input("Enter the word to check palindrome: ") # users input
+reversed_word = word[::-1]  # using slicing to reverse a string
+
+if word == reversed_word:
+    print("Palindrome")
+else:
+    print("Not a palindrome")
+
+#using for loop
+word = input("Enter the word to check palindrome: ") # users input
+reversed_word = ""
+
+for i in range(len(word) - 1, -1, -1): # using for loop to reverse a string
+    reversed_word += word[i]
+
+if word == reversed_word:
+    print("Palindrome")
+else:    
+    print("Not a palindrome")   
+
+#using while loop
+word = input("Enter the word to check palindrome: ") # users input
+reversed_word = ""
+i = len(word) - 1
+
+while i >= 0: # using while loop to reverse a string
+    reversed_word += word[i]
+    i -= 1  
+
+if word == reversed_word:
+    print("Palindrome")    
+else:    
+    print("Not a palindrome")       
+
+#using recursion        
+word = input("Enter the word to check palindrome: ") # users input
+reversed_word = ""
+
+def reverse_string(word):       
+    if len(word) == 0: # Base case: if the string is empty, return an empty string
+        return reversed_word
+    else:       
+        return reverse_string(word[1:]) + word[0] # Recursive case: add the last character to the reversed string of the rest of the string
+    print(reverse_string(word)) 
+
+if word == reversed_word:
+    print("Palindrome")    
+else:    
+    print("Not a palindrome")   
+
+#using built-in function
+word = input("Enter the word to check palindrome: ") # users input
+reversed_word = "".join(reversed(word)) # using built-in function to reverse a string
+
+if word == reversed_word:   
+    print("Palindrome")    
+else:    
+    print("Not a palindrome")
